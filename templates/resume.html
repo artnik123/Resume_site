@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Profil del desarrollador</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div  class="root-container">
+    <aside class="profile-card">
+        <div class="avatar-section">
+             {% if picture %}
+            <figure class="avatar-frame">
+                <img src="{{ picture }}"  alt="Profile picture" class="avatar-img">
+            </figure>
+            {% endif %}
+            <div  class="badge-container">
+                <span class="repo-badge">{{ repo_count }} repos</span>
+             </div>
+        </div>
+        
+        <article class="profile-content">
+             <hgroup>
+                <h3 class="profile-alias">{{ username }}</h3>
+                 <h1 class="profile-name">{{ name }}</h1>
+            </hgroup>
+            
+            <div  class="contact-block">
+                <div class="icon-email">✉</div>
+                 <a href="mailto:{{ email }}" class="email-link">{{ email }}</a>
+            </div>
+     
+            <section class="bio-section">
+                <p class="bio-text">{{ bio  }}</p>
+            </section>
+        </article>
+    </aside>
+    
+    {% if repos %}
+     <div class="repo-grid">
+        {% for repo in repos %}
+        <div  class="repo-card">
+            <div class="repo-icon"></div>
+            <div  class="repo-name">{{ repo }}</div>
+        </div>
+        {% endfor %}
+     </div>
+    {% endif %}
+</div>
+</body>
+</html>

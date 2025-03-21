@@ -1,0 +1,159 @@
+:root {
+    --primary-accent: #2A5C82;
+    --secondary-accent: #5DA399;
+    --text-dark: #2D3748;
+    --bg-gradient: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--bg-gradient);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 2rem;
+}
+
+.root-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-section {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.avatar-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-container {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.repo-badge {
+    background: var(--primary-accent);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.profile-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.profile-alias {
+    color: var(--secondary-accent);
+    margin: 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.profile-name {
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+
+.contact-block {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.email-link {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.email-link:hover {
+    opacity: 0.8;
+}
+
+.bio-text {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 60ch;
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.repo-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s;
+}
+
+.repo-card:hover {
+    transform: translateY(-3px);
+}
+
+.repo-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.repo-name {
+    color: var(--text-dark);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-block {
+        justify-content: center;
+    }
+}
